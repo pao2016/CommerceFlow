@@ -29,6 +29,42 @@
       "name": "carne",
       "price": 5000,
       "stock": 3
+    },
+    {
+      "id": 6,
+      "name": "Pollo",
+      "price": 6000,
+      "stock": 4
+    },
+    {
+      "id": 7,
+      "name": "queso",
+      "price": 15000,
+      "stock": 6
+    },
+    {
+      "id": 8,
+      "name": "arroz",
+      "price": 50000,
+      "stock": 8
+    },
+    {
+      "id": 9,
+      "name": "lentejas",
+      "price": 14000,
+      "stock": 40
+    },
+    {
+      "id": 10,
+      "name": "leche colanta",
+      "price": 4500,
+      "stock": 30
+    },
+    {
+      "id": 11,
+      "name": "frijoles",
+      "price": 50,
+      "stock": 800
     }
   ],
   "orders": [

@@ -17,7 +17,9 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ProductModule } from './components/product/product.module';
-
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { MessageService } from 'primeng/api'; // MessageService
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +42,12 @@ import { ProductModule } from './components/product/product.module';
     ButtonModule,
     FormsModule,
     InputTextModule,
-    ProductModule
+    ProductModule,
+    MessagesModule,
+    MessageModule
 
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

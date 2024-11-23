@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card'; // Para las tarjetas
 import { InputTextModule } from 'primeng/inputtext'; // Para pInputText
-
+import { MessageService } from 'primeng/api'
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [
     IndexProductComponent,
@@ -31,9 +32,11 @@ import { InputTextModule } from 'primeng/inputtext'; // Para pInputText
     AccordionModule,
     ButtonModule,
     CardModule,
-    InputTextModule
+    InputTextModule,
+    MessagesModule
 
   ],
+  providers: [MessageService],
   exports: [ProductFormComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
