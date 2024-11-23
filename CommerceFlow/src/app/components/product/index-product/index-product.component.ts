@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MockDataService } from '../../../services/mock-data.service';
-
+import { ProductStateService } from 'src/app/services/product-state.service';
 @Component({
   selector: 'app-index-product',
   templateUrl: './index-product.component.html',
@@ -11,9 +10,10 @@ export class IndexProductComponent implements OnInit {
   totalRecords: number = 0;
   loading: boolean = true;
 
-  constructor(private mockDataService: MockDataService) { }
+  constructor(private productStateService: ProductStateService) { }
 
   ngOnInit(): void {
+    this.productStateService.loadProducts();
     this.loadProducts();
   }
 
@@ -21,14 +21,8 @@ export class IndexProductComponent implements OnInit {
    * Carga los productos desde el servicio.
    */
   loadProducts(): void {
-    this.mockDataService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data.products;
-      },
-      error: (err) => {
-        console.error('Error al cargar productos:', err);
-        this.loading = false;
-      }
+    this.productStateService.getProducts$().subscribe((data) => {
+      this.products = data;
     });
   }
 

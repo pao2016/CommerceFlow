@@ -1,3 +1,38 @@
-<div class="card">
-    <p>Hola form</p>
+<div class="flex justify-content-center align-items-center h-screen">
+    <div class="card p-4 shadow-2 surface-card" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center text-900 mb-4">Registrar Producto</h2>
+
+        <form #productForm="ngForm" (ngSubmit)="saveProduct()">
+            <!-- Campo para el Nombre -->
+            <div class="field mb-3">
+                <label for="name" class="block text-900 font-medium mb-2">Nombre del Producto</label>
+                <input pInputText type="text" id="name" name="name" [(ngModel)]="objDProduct.name"
+                    placeholder="Ingrese el nombre del producto" required class="w-full" #name="ngModel">
+                <small *ngIf="name.invalid && name.touched" class="p-error">El nombre es obligatorio.</small>
+            </div>
+
+            <!-- Campo para el Precio -->
+            <div class="field mb-3">
+                <label for="price" class="block text-900 font-medium mb-2">Precio del Producto</label>
+                <input pInputText type="number" id="price" name="price" [(ngModel)]="objDProduct.price"
+                    placeholder="Ingrese el precio del producto" required class="w-full" #price="ngModel">
+                <small *ngIf="price.invalid && price.touched" class="p-error">El precio es obligatorio.</small>
+            </div>
+
+            <!-- Campo para el Stock -->
+            <div class="field mb-3">
+                <label for="stock" class="block text-900 font-medium mb-2">Stock del Producto</label>
+                <input pInputText type="number" id="stock" name="stock" [(ngModel)]="objDProduct.stock"
+                    placeholder="Ingrese la cantidad en stock" required class="w-full" #stock="ngModel">
+                <small *ngIf="stock.invalid && stock.touched" class="p-error">El stock es obligatorio.</small>
+            </div>
+
+            <!-- Botón Guardar -->
+            <div class="flex justify-content-end mt-3">
+                <button pButton type="submit" label="Guardar Producto" icon="pi pi-save" class="p-button-success"
+                    [disabled]="productForm.invalid">
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
