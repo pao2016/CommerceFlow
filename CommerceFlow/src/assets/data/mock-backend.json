@@ -1,0 +1,36 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1",
+            "price": 100,
+            "stock": 50
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "price": 200,
+            "stock": 30
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "price": 150,
+            "stock": 20
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "productId": 1,
+            "quantity": 2,
+            "total": 200
+        },
+        {
+            "id": 2,
+            "productId": 3,
+            "quantity": 1,
+            "total": 150
+        }
+    ]
+}

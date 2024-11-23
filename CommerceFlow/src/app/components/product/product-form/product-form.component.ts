@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-
+  product = {
+    id: null,
+    name: '',
+    price: null,
+    stock: null
+  };
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  saveProduct(): void {
+    console.log('Producto guardado:', this.product);
+    // Aquí puedes implementar la lógica para enviar el producto al backend
+  }
 }
