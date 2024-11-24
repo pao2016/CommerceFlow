@@ -1,1 +1,70 @@
-<p>order-form works!</p>
+<p-messages [(value)]="formMessages"></p-messages>
+
+<div class="grid justify-content-center align-items-center mt-5">
+    <div class="col-12 md:col-8 lg:col-6">
+        <div class="card p-4 shadow-2 surface-card">
+            <form #orderForm="ngForm" (ngSubmit)="saveOrder()">
+                <!-- Campo para el Nombre del Cliente -->
+                <div class="field mb-3">
+                    <label for="customerName" class="block text-900 font-medium mb-2">Nombre del Cliente</label>
+                    <input pInputText type="text" id="customerName" name="customerName" [(ngModel)]="order.customerName"
+                        placeholder="Ingrese el nombre del cliente" required class="w-full" />
+                </div>
+
+                <!-- Campo para Seleccionar Productos -->
+                <div class="field mb-3">
+                    <label for="products" class="block text-900 font-medium mb-2">Seleccionar Producto</label>
+                    <p-dropdown [options]="productOptions" [(ngModel)]="selectedProduct" name="products"
+                        optionLabel="name" placeholder="Seleccione un producto" class="w-full">
+                    </p-dropdown>
+                    <div class="mt-2">
+                        <button pButton type="button" label="Agregar Producto" icon="pi pi-plus"
+                            class="p-button-sm p-button-success" (click)="addProductToOrder()"></button>
+                    </div>
+                </div>
+
+                <!-- Tabla de Productos Seleccionados -->
+                <div class="field mb-3">
+                    <label class="block text-900 font-medium mb-2">Productos Seleccionados</label>
+                    <p-table [value]="order.items" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item>
+                            <tr>
+                                <td>{{ item.productName }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>{{ item.price | currency }}</td>
+                                <td>
+                                    <button pButton type="button" icon="pi pi-trash" class="p-button-sm p-button-danger"
+                                        (click)="removeProductFromOrder(item)"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+
+                <!-- Campo para el Estado -->
+                <div class="field mb-3">
+                    <label for="status" class="block text-900 font-medium mb-2">Estado</label>
+                    <select pDropdown id="status" name="status" [(ngModel)]="order.status" required class="w-full">
+                        <option value="Pending">Pendiente</option>
+                        <option value="Completed">Completada</option>
+                        <option value="Cancelled">Cancelada</option>
+                    </select>
+                </div>
+
+                <!-- Botón Guardar -->
+                <div class="flex justify-content-end mt-4">
+                    <button pButton type="submit" label="Guardar Orden" icon="pi pi-save"
+                        class="p-button-success w-full md:w-auto"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

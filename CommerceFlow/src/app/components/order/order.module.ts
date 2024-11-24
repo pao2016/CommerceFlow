@@ -15,7 +15,7 @@ import { CardModule } from 'primeng/card'; // Para las tarjetas
 import { InputTextModule } from 'primeng/inputtext'; // Para pInputText
 import { MessagesModule } from 'primeng/messages'; // Para mensajes
 import { MessageService } from 'primeng/api'; // Servicio para mensajes PrimeNG
-
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [
     IndexOrderComponent,
@@ -34,6 +34,7 @@ import { MessageService } from 'primeng/api'; // Servicio para mensajes PrimeNG
     CardModule, // Para tarjetas
     InputTextModule, // Para campos de texto
     MessagesModule, // Para mensajes
+    DropdownModule
   ],
   providers: [MessageService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Permite componentes personalizados como p-table
