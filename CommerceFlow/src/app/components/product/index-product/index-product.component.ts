@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductStateService } from 'src/app/services/product-state.service';
+
 @Component({
   selector: 'app-index-product',
   templateUrl: './index-product.component.html',
@@ -27,19 +28,12 @@ export class IndexProductComponent implements OnInit {
   }
 
   /**
-   * Acción para crear un nuevo producto.
+   * Eliminar un producto.
+   * @param productId ID del producto a eliminar
    */
-  onNewProduct(): void {
-    console.log('New product action');
-    // Redirige al formulario de creación o abre un modal
-  }
-
-  /**
-   * Acción para editar un producto existente.
-   * @param product Producto seleccionado
-   */
-  onEditProduct(product: any): void {
-    console.log('Edit product action:', product);
-    // Maneja la lógica para editar el producto seleccionado
+  deleteProduct(productId: number): void {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.productStateService.deleteProduct(productId);
+    }
   }
 }

@@ -30,13 +30,7 @@ export class IndexOrderComponent implements OnInit {
     });
   }
 
-  /**
-   * Acción para crear una nueva orden.
-   */
-  onNewOrder(): void {
-    console.log('New order action');
-    // Aquí podrías redirigir a un formulario de creación o abrir un modal
-  }
+
 
   /**
    * Acción para editar una orden existente.

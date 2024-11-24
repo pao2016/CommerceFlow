@@ -25,12 +25,10 @@ export class EditOrderComponent implements OnInit {
   // Cargar la orden para editar basada en el ID de la ruta
   loadOrder(): void {
     const orderId = this.route.snapshot.paramMap.get('id'); // Obtener el ID de la URL
-    console.log("el id del orden", orderId);
     if (orderId) {
       this.orderStateService.getOrderById(+orderId).subscribe(
         (order) => {
           this.order = order;
-          console.log("la odern", this.order)
         },
         (error) => {
           console.error('Error al cargar la orden:', error);
