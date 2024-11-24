@@ -2,7 +2,7 @@
   "orders": [
     {
       "id": "1",
-      "customerName": "Juan Pérez",
+      "customerName": "Juan Pérez editado",
       "items": [
         {
           "productId": 1,
@@ -15,10 +15,16 @@
           "productName": "Mouse",
           "quantity": 2,
           "price": 25
+        },
+        {
+          "productId": "20",
+          "productName": "pez",
+          "quantity": 1,
+          "price": 80000
         }
       ],
-      "totalAmount": 1050,
-      "status": "Pending",
+      "totalAmount": 81050,
+      "status": "Completed",
       "createdAt": "2024-11-24T10:00:00Z"
     },
     {
@@ -77,6 +83,27 @@
       "totalAmount": 15050,
       "status": "Pending",
       "createdAt": "2024-11-24T16:50:18.195Z"
+    },
+    {
+      "id": null,
+      "customerName": "Carlos Eduardo bermudez",
+      "items": [
+        {
+          "productId": "11",
+          "productName": "frijoles",
+          "quantity": 1,
+          "price": 50
+        },
+        {
+          "productId": "9",
+          "productName": "lentejas",
+          "quantity": 1,
+          "price": 14000
+        }
+      ],
+      "totalAmount": 14050,
+      "status": "Cancelled",
+      "createdAt": "2024-11-24T17:31:22.780Z"
     }
   ]
 }

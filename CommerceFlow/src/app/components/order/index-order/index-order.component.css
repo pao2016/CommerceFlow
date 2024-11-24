@@ -1,0 +1,29 @@
+:host ::ng-deep .p-datatable {
+    font-size: 14px;
+  }
+  
+  :host ::ng-deep .p-datatable-header {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.p-button-success {
+    font-size: 0.875rem; /* Ajusta el tamaño del botón si es necesario */
+}

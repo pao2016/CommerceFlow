@@ -33,19 +33,16 @@ export class OrderStateService {
   }
 
   // Guardar una orden (crear o actualizar)
-  saveOrder(order: Order): void {
+  saveOrder(order: Order): Observable<any> {
     if (order.id) {
       // Si la orden tiene ID, se actualiza
-      this.http.put(`${this.apiUrl}/${order.id}`, order).subscribe(() => {
-        this.loadOrders(); // Recargar las órdenes
-      });
+      return this.http.put(`${this.apiUrl}/${order.id}`, order);
     } else {
       // Si no tiene ID, se crea una nueva
-      this.http.post<Order>(this.apiUrl, order).subscribe(() => {
-        this.loadOrders(); // Recargar las órdenes
-      });
+      return this.http.post(this.apiUrl, order);
     }
   }
+
 
   // Seleccionar una orden
   selectOrder(order: Order): void {
@@ -77,4 +74,6 @@ export class OrderStateService {
   getOrderById(id: number): Observable<Order> {
     return this.http.get<Order>(`${this.apiUrl}/${id}`);
   }
+
+
 }
