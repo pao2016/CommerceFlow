@@ -71,4 +71,8 @@ export class ProductStateService {
       this.productsSubject.next(updatedProducts);
     });
   }
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  }
+
 }

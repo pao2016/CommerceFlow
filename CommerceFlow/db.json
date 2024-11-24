@@ -2,13 +2,13 @@
   "products": [
     {
       "id": "1",
-      "name": "Product 1",
+      "name": "Product editado",
       "price": 100,
       "stock": 50
     },
     {
       "id": "2",
-      "name": "Product 2",
+      "name": "Product 2 editado ",
       "price": 200,
       "stock": 30
     },
@@ -65,6 +65,18 @@
       "name": "frijoles",
       "price": 50,
       "stock": 800
+    },
+    {
+      "id": 20,
+      "name": "pez",
+      "price": 80000,
+      "stock": 10
+    },
+    {
+      "id": 30,
+      "name": "papas",
+      "price": 8500,
+      "stock": 50
     }
   ],
   "orders": [
