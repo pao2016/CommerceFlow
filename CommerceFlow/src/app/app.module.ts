@@ -19,7 +19,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ProductModule } from './components/product/product.module';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-import { MessageService } from 'primeng/api'; // MessageService
+import { MessageService } from 'primeng/api';
+import { OrderModule } from './components/order/order.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,9 @@ import { MessageService } from 'primeng/api'; // MessageService
     InputTextModule,
     ProductModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    OrderModule
+
 
   ],
   providers: [MessageService],
